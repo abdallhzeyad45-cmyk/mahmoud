@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سلمى ❤️</title>
+<style>
+body{margin:0;font-family:Tahoma;background:linear-gradient(135deg,#24002f,#5e0a78,#8a2be2);color:#fff;overflow:hidden}
+#lock,#main{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column}
+#main{display:none;overflow:auto;padding:20px}
+.box{background:rgba(255,255,255,.12);padding:25px;border-radius:25px;backdrop-filter:blur(10px);width:min(90%,420px);text-align:center}
+input,button{padding:12px;border-radius:12px;border:none}
+input{width:90%}
+button{cursor:pointer;margin-top:10px}
+h1{text-shadow:0 0 20px pink}
+#counter{font-size:24px;line-height:1.8;margin:20px}
+.msg{max-width:900px;background:rgba(255,255,255,.1);padding:25px;border-radius:25px;line-height:2}
+.f{position:fixed;top:-30px;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+.music{position:fixed;left:15px;top:15px;font-size:28px}
+</style>
+</head>
+<body>
+<div id="lock">
+<div class="box">
+<h2>🔐 صفحة خاصة بسلمى</h2>
+<input id="p" placeholder="كلمة السر">
+<br><button onclick="o()">دخول ❤️</button>
+</div>
+</div>
+
+<div id="main">
+<button class="music" onclick="t()">🎵</button>
+<h1>سلمى ❤️</h1>
+<div id="counter"></div>
+<div class="msg">
+سلمى...<br><br>
+أحيانًا تكون بعض الأسماء مختلفة عن كل الأسماء، وبعض الذكريات أجمل من أن ينساها الإنسان مهما مرت الأيام.
+أتمنى لك السعادة والراحة وتحقيق كل أحلامك، وأن تبقى أيامك مليئة بالفرح والطمأنينة.
+هذه الصفحة مجرد هدية بسيطة تحمل كلمات تقدير ومشاعر جميلة وذكريات لا تُنسى.
+<br><br>
+مهما تغيرت الأيام تبقى بعض اللحظات لها مكان خاص في القلب، وتبقى بعض الأمنيات صادقة بأن يكون من نهتم بهم بخير دائمًا.
+❤️🌹💜
+</div>
+</div>
+
+<audio id="m" loop autoplay>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function o(){
+ if(document.getElementById('p').value==='4/8/2008'){
+  lock.style.display='none'; main.style.display='flex';
+ }
+}
+const s=new Date('2006-09-03T00:00:00');
+setInterval(()=>{
+ let d=new Date()-s;
+ let days=Math.floor(d/86400000);
+ let h=Math.floor(d%86400000/3600000);
+ let m=Math.floor(d%3600000/60000);
+ let sec=Math.floor(d%60000/1000);
+ counter.innerHTML=`❤️ ${days} يوم<br>💜 ${h} ساعة<br>🌹 ${m} دقيقة<br>✨ ${sec} ثانية`;
+},1000);
+
+function t(){let a=document.getElementById('m'); a.paused?a.play():a.pause();}
+
+setInterval(()=>{
+ let e=document.createElement('div');
+ e.className='f';
+ e.innerHTML=Math.random()>0.5?'💜':'🌹';
+ e.style.left=Math.random()*100+'vw';
+ e.style.fontSize=(20+Math.random()*25)+'px';
+ e.style.animationDuration=(4+Math.random()*6)+'s';
+ document.body.appendChild(e);
+ setTimeout(()=>e.remove(),10000);
+},180);
+</script>
+</body>
+</html>
